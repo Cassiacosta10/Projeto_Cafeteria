@@ -1,0 +1,279 @@
+:root {
+    --main-color: #d3ad7f;
+    --black: #13131a;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+}
+
+* {
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    /*toda palavra vai iniciar com a letra maiuscula*/
+    transition: 0.2s linear;
+    /*2segundos para animar o objeto q o mouse passar*/
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+section {
+    /*para que todas as section do site siga um padrão, ex as margens*/
+    padding: 3rem 2rem;
+    /* 3 em cima e embaixo e 2 para os lados*/
+    margin: 0 auto;
+    /*0 para cima e o auto justifica para o centro*/
+    max-width: 1200px;
+    /* para ficar o espaço nas laterais*/
+}
+
+.header {
+    position: fixed;
+    /*para deixar o menu fixado enquando a pagina rola pra cima e pra baixo*/
+    top: 0;
+    /* top, left e right zerados para ter certeza q ficará tudo travado lá em cima*/
+    left: 0;
+    right: 0;
+    z-index: 99;
+    /*ele define quem vai ficar na frente de quem e o header(menu) é quem vai ficar*/
+    border-bottom: var(--border);
+    background-color: var(--bg);
+    /*não vai deixar o menu transparente/vazado*/
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*na horizontal, espaço entre os itens*/
+    align-items: center;
+    /*alinha na horizontal os itens*/
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.navbar a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.navbar a:hover {
+    /*para qdo passsar o mouse haverá algumas alterações no menu*/
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding: 0.5rem;
+    font-size: 2.0rem;
+}
+
+.icons img {
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.icons img:hover {
+
+    width: 40px;
+    height: 40px;
+}
+
+.btn {
+    background: var(--main-color);
+    color: #fff;
+    padding: 1rem 3rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    letter-spacing: 0.1rem;
+}
+
+.home-container {
+    background: url("./img/home-img.jpg");
+
+    background-position: center;
+    background-size: cover;
+    /* vai cobrir a tela toda*/
+}
+
+.home-container section {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    /*independente do tamanho da tela ele irá no mínimo ocupara a tela toda*/
+}
+
+.content {
+    max-width: 60rem;
+}
+
+.content h3 {
+    color: #fff;
+    font-size: 6rem;
+}
+
+.content p {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 1.8;
+    /*espaçamento entre linhas*/
+    padding: 1rem 0;
+}
+
+.title {
+    font-size: 4rem;
+    color: var(--main-color);
+    text-align: center;
+    text-transform: uppercase;
+    /*sera tudo maiusculo*/
+    margin-bottom: 4rem;
+}
+
+.title span {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    gap: 1.5rem;
+}
+
+.about .row .content {
+    padding: 2rem;
+}
+
+.about .row .content h3 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.about .row .content p {
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.price {
+    color: #fff;
+}
+
+.box-container {
+    display: grid;
+    /*ideal pra usar qdo tem vários itens q terao a mesma configuraçao*/
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    /*organiza automaticamente mas tenho q informar o tam. mín e max pois poderá ser usado em outras tela de outros tamanhos*/
+    gap: 1.5rem;
+}
+
+.menu .box-container .box {
+    text-align: center;
+    border: var(--border);
+    padding: 5rem;
+    cursor: pointer;
+}
+
+.menu .box-container .box:hover {
+    background-color: #fff;
+}
+
+.menu .box-container .box:hover>* {
+    /*vai aplicar para todos q estao dentro do box*/
+    color: var(--black);
+}
+
+.menu .box-container .box img {
+    height: 10rem;
+}
+
+.menu .box-container .box h3 {
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.menu .box-container .box .price {
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.menu .box-container .box .price span {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    /*linha cortando o texto no caso o preço*/
+    font-weight: lighter;
+    /*linha fina*/
+}
+
+.menu .box-container .box:hover {
+    background-color: #fff;
+}
+
+.menu .box-container .box:hover>* {
+    /*vai aplicar para todos q estao dentro do box*/
+    color: var(--black);
+}
+
+.review .box-container .box {
+    border: var(--border);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.review .box-container .box p {
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 2rem 0;
+    line-height: 1.8;
+    font-weight: lighter;
+}
+
+.review .box-container .box h3 {
+    color: #fff;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.review .box-container .box .user {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+
+}
+
+.address {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu_redes {
+    text-align: center;
+}
+
+.menu_redes .redesSociais {
+    padding: 1rem 0;
+}
+
+.menu_redes .redesSociais img {
+    margin: 0.3rem;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+.menu_redes .redesSociais img:hover {
+    background-color: var(--main-color);
+}
